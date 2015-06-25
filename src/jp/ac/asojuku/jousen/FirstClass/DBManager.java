@@ -25,11 +25,11 @@ public class DBManager extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO 自動生成されたメソッド・スタブ
 
-		String sql1="CREATE TABLE member(mem_num text PRIMARY KEY,mem_name text,mail text,pass text,sex text)";
-		String sql2="CREATE TABLE con(con_num text PRIMARY KEY,mem_num text,title text,des text,pic_pass text)";
-		String sql3="CREATE TABLE con_his(mem_num text PRIMARY KEY ,con_num text)";
-		String sql4="CREATE TABLE favorite(mem_num text PRIMARY KEY , fav_mem text)";
-		String sql5="CREATE TABLE con_det(con_num text PRIMARY KEY , com_mem text,comment text)";
+		String sql1="CREATE TABLE IF NOT EXISTS member(mem_num text PRIMARY KEY,mem_name text,mail text,pass text,sex text)";
+		String sql2="CREATE TABLE IF NOT EXISTS con(con_num text PRIMARY KEY,mem_num text,title text,des text,pic_pass text)";
+		String sql3="CREATE TABLE IF NOT EXISTS con_his(mem_num text PRIMARY KEY ,con_num text)";
+		String sql4="CREATE TABLE IF NOT EXISTS favorite(mem_num text PRIMARY KEY , fav_mem text)";
+		String sql5="CREATE TABLE IF NOT EXISTS con_det(con_num text PRIMARY KEY , com_mem text,comment text)";
 
 		db.execSQL(sql1);
 		db.execSQL(sql2);
